@@ -1,0 +1,10 @@
+name: Manhunt
+version: ${project.version}
+main: de.base2code.manhunt.Manhunt
+api-version: 1.16
+
+commands:
+  init:
+  hunter:
+  speedrunner:
+  start:
