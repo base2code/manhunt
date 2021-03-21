@@ -6,6 +6,7 @@ import de.base2code.manhunt.commands.CMDSpeedrunner;
 import de.base2code.manhunt.commands.CMDStart;
 import de.base2code.manhunt.listener.BlockBreak;
 import de.base2code.manhunt.listener.Death;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,6 +29,8 @@ public final class Manhunt extends JavaPlugin {
         this.getCommand("start").setExecutor(new CMDStart());
 
         GameAction.initialize();
+
+        Metrics metrics = new Metrics(this, 10763);
 
     }
 
