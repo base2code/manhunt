@@ -8,6 +8,8 @@
 # IntelliJ
 out/
 
+testspigot/
+
 # Compiled class file
 *.class
 

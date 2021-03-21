@@ -2,6 +2,7 @@ package de.base2code.manhunt.commands;
 
 import de.base2code.manhunt.GameAction;
 import de.base2code.manhunt.Manhunt;
+import de.base2code.manhunt.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -31,7 +32,7 @@ public class CMDStart implements CommandExecutor {
             }
             started = true;
             countdown = true;
-            Bukkit.broadcastMessage("I'm counting to " + Manhunt.getInstance().getConfig().getInt("vars.countdown"));
+            Utils.broadcastMessage("countdown");
 
             for (Player p : GameAction.hunter){
                 p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 255));
@@ -44,7 +45,7 @@ public class CMDStart implements CommandExecutor {
                     Bukkit.broadcastMessage(i + "");
                     if (i >= Manhunt.getInstance().getConfig().getInt("vars.countdown")){
                         countdown = false;
-                        Bukkit.broadcastMessage("§aLet's go!");
+                        Utils.broadcastMessage("start");
                         Bukkit.getScheduler().cancelTask(id);
                     }
                 }

@@ -1,6 +1,7 @@
 package de.base2code.manhunt.commands;
 
 import de.base2code.manhunt.GameAction;
+import de.base2code.manhunt.utils.Utils;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,7 +16,7 @@ public class CMDHunter implements CommandExecutor {
             if (GameAction.speedrunner.contains((Player) sender)){
                 GameAction.speedrunner.remove((Player) sender);
             }
-            sender.sendMessage("§aYou are now a Hunter!");
+            Utils.sendMessage((Player) sender, "role.hunter");
         }
         return false;
     }

@@ -3,6 +3,7 @@ package de.base2code.manhunt.listener;
 import de.base2code.manhunt.GameAction;
 import de.base2code.manhunt.commands.CMDInit;
 import de.base2code.manhunt.commands.CMDStart;
+import de.base2code.manhunt.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -18,9 +19,9 @@ public class Death implements Listener {
         if (CMDStart.started){
             if (GameAction.speedrunner.contains(e.getEntity())){
                 CMDStart.started = false;
-                Bukkit.broadcastMessage("§aThe Hunters have won!");
                 for (Player p : Bukkit.getOnlinePlayers()){
                     p.setGameMode(GameMode.SPECTATOR);
+                    Utils.sendMessage(p, "hunter_won");
                 }
             }
             if (GameAction.hunter.contains(e.getEntity())){

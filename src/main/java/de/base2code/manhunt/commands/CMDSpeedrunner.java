@@ -1,6 +1,7 @@
 package de.base2code.manhunt.commands;
 
 import de.base2code.manhunt.GameAction;
+import de.base2code.manhunt.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ public class CMDSpeedrunner implements CommandExecutor {
             if (GameAction.hunter.contains((Player) sender)){
                 GameAction.hunter.remove((Player) sender);
             }
-            sender.sendMessage("§aYou are now Speedrunner!");
+            Utils.sendMessage((Player) sender, "role.speedrunner");
         }
         return false;
     }

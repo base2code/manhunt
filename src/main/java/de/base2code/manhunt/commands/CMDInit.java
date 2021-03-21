@@ -1,6 +1,7 @@
 package de.base2code.manhunt.commands;
 
 import de.base2code.manhunt.Manhunt;
+import de.base2code.manhunt.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -26,7 +27,7 @@ public class CMDInit implements CommandExecutor {
                 blocks.add(Bukkit.getWorld("world").getHighestBlockAt(x, z));
                 System.out.println(i + "-" + " x: " + x + " z: " + z);
             }
-            sender.sendMessage("§aSuccess");
+            Utils.sendMessage((Player) sender, "init_success");
         }
         return false;
     }
