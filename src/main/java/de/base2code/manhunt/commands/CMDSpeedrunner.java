@@ -14,7 +14,7 @@ public class CMDSpeedrunner implements CommandExecutor {
             if (GameAction.hunter.contains((Player) sender)){
                 GameAction.hunter.remove((Player) sender);
             }
-            sender.sendMessage("§aDu bist nun einer Speedrunner!");
+            sender.sendMessage("§aYou are now Speedrunner!");
         }
         return false;
     }

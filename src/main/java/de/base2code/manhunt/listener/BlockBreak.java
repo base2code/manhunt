@@ -16,10 +16,10 @@ public class BlockBreak implements Listener {
         if (e.getBlock().getType().equals(Material.GOLD_BLOCK)){
             if (CMDInit.blocks.contains(e.getBlock())){
                 CMDInit.blocks.remove(e.getBlock());
-                Bukkit.broadcastMessage("§cDer Speedrunner hat einen Goldblock abgebaut");
+                Bukkit.broadcastMessage("§cThe Speedrunner has found a gold block");
                 if (CMDInit.blocks.isEmpty()){
                     CMDStart.started = false;
-                    Bukkit.broadcastMessage("§cDer Speedrunner hat alle Goldblöcke abgebaut und hat gewonnen");
+                    Bukkit.broadcastMessage("§cThe Speedrunner has found all golden blocks and wins!");
                     for (Player p : Bukkit.getOnlinePlayers()){
                         p.setGameMode(GameMode.SPECTATOR);
                     }

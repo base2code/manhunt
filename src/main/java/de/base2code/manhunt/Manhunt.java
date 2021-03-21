@@ -6,7 +6,6 @@ import de.base2code.manhunt.commands.CMDSpeedrunner;
 import de.base2code.manhunt.commands.CMDStart;
 import de.base2code.manhunt.listener.BlockBreak;
 import de.base2code.manhunt.listener.Death;
-import de.base2code.manhunt.listener.Move;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,7 +21,6 @@ public final class Manhunt extends JavaPlugin {
 
         pm.registerEvents(new BlockBreak(), this);
         pm.registerEvents(new Death(), this);
-        pm.registerEvents(new Move(), this);
 
         this.getCommand("init").setExecutor(new CMDInit());
         this.getCommand("hunter").setExecutor(new CMDHunter());

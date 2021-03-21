@@ -15,7 +15,7 @@ public class CMDHunter implements CommandExecutor {
             if (GameAction.speedrunner.contains((Player) sender)){
                 GameAction.speedrunner.remove((Player) sender);
             }
-            sender.sendMessage("§aDu bist nun einer Hunter!");
+            sender.sendMessage("§aYou are now a Hunter!");
         }
         return false;
     }

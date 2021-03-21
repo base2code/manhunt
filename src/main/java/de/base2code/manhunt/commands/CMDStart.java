@@ -1,5 +1,6 @@
 package de.base2code.manhunt.commands;
 
+import de.base2code.manhunt.GameAction;
 import de.base2code.manhunt.Manhunt;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -9,6 +10,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class CMDStart implements CommandExecutor {
     public static boolean started = false;
@@ -28,7 +31,12 @@ public class CMDStart implements CommandExecutor {
             }
             started = true;
             countdown = true;
-            Bukkit.broadcastMessage("Ich zähle bis 20");
+            Bukkit.broadcastMessage("I'm counting to 20");
+
+            for (Player p : GameAction.hunter){
+                p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 255));
+            }
+
             id = Bukkit.getScheduler().scheduleSyncRepeatingTask(Manhunt.getInstance(), new Runnable() {
                 @Override
                 public void run() {
@@ -36,7 +44,7 @@ public class CMDStart implements CommandExecutor {
                     Bukkit.broadcastMessage(i + "");
                     if (i >= 20){
                         countdown = false;
-                        Bukkit.broadcastMessage("§aEs geht los!");
+                        Bukkit.broadcastMessage("§aLet's go!");
                         Bukkit.getScheduler().cancelTask(id);
                     }
                 }
