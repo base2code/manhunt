@@ -1,5 +1,7 @@
 # ManHunt
 
+[SpigotMC page](https://www.spigotmc.org/resources/manhunt.90409/)
+
 ## Minecraft Manhunt
 _It was originally a plugin developed in about 30 mins to play with my friends!_
 
