@@ -1,0 +1,9 @@
+#####################
+# Minecraft manhunt #
+#####################
+
+vars:
+  # Countdown in sec
+  countdown: 20
+  # Radius in which gold blocks are placed
+  radius: 250

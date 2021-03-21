@@ -18,6 +18,10 @@ public final class Manhunt extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+
+        this.saveDefaultConfig();
+        this.reloadConfig();
+
         PluginManager pm = Bukkit.getPluginManager();
 
         pm.registerEvents(new BlockBreak(), this);

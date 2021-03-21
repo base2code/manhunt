@@ -27,11 +27,11 @@ public class CMDStart implements CommandExecutor {
                 p.teleport(start);
                 p.getInventory().addItem(new ItemStack(Material.COMPASS, 1));
                 p.setHealth(20);
-                p.setFoodLevel(10);
+                p.setFoodLevel(20);
             }
             started = true;
             countdown = true;
-            Bukkit.broadcastMessage("I'm counting to 20");
+            Bukkit.broadcastMessage("I'm counting to " + Manhunt.getInstance().getConfig().getInt("vars.countdown"));
 
             for (Player p : GameAction.hunter){
                 p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20, 255));
@@ -42,7 +42,7 @@ public class CMDStart implements CommandExecutor {
                 public void run() {
                     i++;
                     Bukkit.broadcastMessage(i + "");
-                    if (i >= 20){
+                    if (i >= Manhunt.getInstance().getConfig().getInt("vars.countdown")){
                         countdown = false;
                         Bukkit.broadcastMessage("§aLet's go!");
                         Bukkit.getScheduler().cancelTask(id);
