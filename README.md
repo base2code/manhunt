@@ -26,8 +26,46 @@ _The speed runner has a compass which points to the golden block. The Hunters ha
 ## Installation:
 Place the plugin in the "plugins" directory
 
+## config.yml
+```yaml
+#####################
+# Minecraft manhunt #
+#####################
+
+# Language
+lang: de
+
+vars:
+  # Countdown in sec
+  countdown: 20
+  # Radius in which gold blocks are placed
+  radius: 250
+
+# messages english
+message_en:
+  hunter_won: "§aThe hunters have won!"
+  role:
+    hunter: "§aYou are now a hunter!"
+    speedrunner: "§aYou a now a speed runner!"
+  found_block: "§a§lThe speed runner has found a gold block!"
+  found_all_blocks: "§a§lThe speed runner has found all gold blocks and wins!"
+  init_success: "§aAll gold blocks have been placed"
+  start: "§aLet's begin!"
+  countdown: "I'm counting to "
+
+# messages german
+message_de:
+  hunter_won: "§aDie Hunter haben gewonnen!"
+  role:
+    hunter: "§aDu bist nun ein Hunter!"
+    speedrunner: "§aDu bist nun ein Speedrunner!"
+  found_block: "§a§lDer Speedrunner hat einen Goldblock gefunden!"
+  found_all_blocks: "§a§lDer Speedrunner hat alle Goldblöcke gefunden und gewinnt!"
+  init_success: "§aAlle Goldblöcke wurde erfolgreich plaziert"
+  start: "§aLos geht's!"
+  countdown: "Ich zähle bis "
+```
+
+
 Support:
 [![Discord](https://discord.com/api/guilds/810244027239759952/widget.png)](https://discord.gg/MjDvFsK2NG)
-
-ToDo:
-- Make plugin configurable
