@@ -26,8 +26,6 @@ _The speed runner has a compass which points to the golden block. The Hunters ha
 ## Installation:
 Place the plugin in the "plugins" directory
 
-_No plugin directory is created by the plugin!_
-
 Support:
 [![Discord](https://discord.com/api/guilds/810244027239759952/widget.png)](https://discord.gg/MjDvFsK2NG)
 
