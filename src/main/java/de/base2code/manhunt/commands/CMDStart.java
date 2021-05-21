@@ -6,6 +6,7 @@ import de.base2code.manhunt.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,7 +24,7 @@ public class CMDStart implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
-            Location start = Bukkit.getWorld("world").getHighestBlockAt(0,0).getLocation().add(0, 2, 0);
+            Location start = getNormal((Player) sender).getHighestBlockAt(0,0).getLocation().add(0, 2, 0);
             for (Player p : Bukkit.getOnlinePlayers()){
                 p.teleport(start);
                 p.getInventory().addItem(new ItemStack(Material.COMPASS, 1));
@@ -52,5 +53,11 @@ public class CMDStart implements CommandExecutor {
             },0,20);
         }
         return false;
+    }
+
+    public static World getNormal(Player player) {
+        World world = player.getWorld();
+        String[] normals = world.getName().split("_");
+        return Bukkit.getServer().getWorld(normals[0]);
     }
 }

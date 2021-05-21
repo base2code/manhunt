@@ -19,12 +19,13 @@ public class CMDInit implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
+            Player player = (Player) sender;
             int radius = Manhunt.getInstance().getConfig().getInt("vars.radius");
             for (int i = 0; i <= 2; i++){
                 int x = ThreadLocalRandom.current().nextInt(-1 * radius, radius);
                 int z = ThreadLocalRandom.current().nextInt(-1 * radius, radius);
-                Bukkit.getWorld("world").getHighestBlockAt(x, z).setType(Material.GOLD_BLOCK);
-                blocks.add(Bukkit.getWorld("world").getHighestBlockAt(x, z));
+                CMDStart.getNormal(player).getHighestBlockAt(x, z).setType(Material.GOLD_BLOCK);
+                blocks.add(CMDStart.getNormal(player).getHighestBlockAt(x, z));
                 System.out.println(i + "-" + " x: " + x + " z: " + z);
             }
             Utils.sendMessage((Player) sender, "init_success");
