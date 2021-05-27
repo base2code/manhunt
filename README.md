@@ -3,7 +3,7 @@
 [SpigotMC page](https://www.spigotmc.org/resources/manhunt.90409/)
 
 ## Minecraft Manhunt
-_It was originally a plugin developed in about 30 mins to play with my friends!_
+### _It was originally a plugin developed in about 30 mins to play with my friends!_
 
 The speed runner has to find 3 golden blocks placed randomly in a 250 block radius.
 
